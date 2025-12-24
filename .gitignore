@@ -1,0 +1,32 @@
+# --- OS & IDEs ---
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# --- Java/Spring Boot Specific ---
+# Ignore the 'bin' and 'build' folders (where .class files live)
+bin/
+build/
+backend/bin/
+backend/build/
+backend/out/
+.gradle/
+backend/.gradle/
+
+# Ignore the actual compiled executable jars
+*.jar
+*.war
+
+# --- Sensitive Data ---
+# This hides your database passwords/secrets
+backend/src/main/resources/application.properties
+.env
+*.local
+
+# --- Frontend (React/Vite) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+npm-debug.log*
