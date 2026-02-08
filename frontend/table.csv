@@ -1,0 +1,12 @@
+Feature,Method,Endpoint,Request Body (DTO Fields),Response Body
+Register,POST,/auth/register,"name, email, password, currency, monthlyBudget",token
+Login,POST,/auth/login,"email, password",token
+Get Profile,GET,/users/profile,None (uses JWT),"id, name, email, currency, monthlyBudget, createdAt"
+Update Profile,PUT,/users/profile,"name, currency, monthlyBudget",UserProfileResponse
+Get Expenses,GET,/expenses,"Query Params: month, year, categoryId, type",List<ExpenseResponse>
+Add Expense,POST,/expenses,"amount, categoryId, type, paymentMethod, date, note",ExpenseResponse
+Edit Expense,PUT,/expenses/{id},"amount, categoryId, type, paymentMethod, date, note",ExpenseResponse
+Delete Expense,DELETE,/expenses/{id},None,204 No Content
+Get Categories,GET,/categories,None,List<CategoryResponse>
+Add Category,POST,/categories,"name, type",CategoryResponse
+Monthly Summary,GET,/expenses/summary/monthly,"Query Params: year, month","totalIncome, totalExpense, balance, categorySummaryMaps"
